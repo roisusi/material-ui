@@ -1,22 +1,32 @@
 import "./App.css";
-import Button from "@mui/material/Button";
+import GeneralUsesSx from "./Styles/GeneralUsesSx.tsx";
+import Basic from "./Styles/Basic.tsx";
+import ReusableButton from "./Styles/ReusableButton.tsx";
+import ReusableButtonDynamic, {
+  ReusableButtonDynamicNotStyled,
+} from "./Styles/ReusableButtonDynamic.tsx";
+import {
+  OverridewWithThemeStyled,
+  OverrideStyledClasses,
+  StaticStyled,
+} from "./Styles/WithStyledClass/StylesBaseComponents.tsx";
+import { Stack } from "@mui/material";
 
 function App() {
-  //Mui multi a number in margin padding gap columnGap rowGap by spacing value
-  //We can access theme values by writing like warring.main (in sx)
   return (
     <>
-      <Button
-        variant={"contained"}
-        sx={(theme) => ({
-          fontSize: 10,
-          color: "warning.main",
-          margin: 10,
-          backgroundColor: theme.palette.error.main,
-        })}
-      >
-        My Button
-      </Button>
+      <GeneralUsesSx />
+      <Basic />
+      <ReusableButton>Hello</ReusableButton>
+      <ReusableButtonDynamic>Hello Dynamic</ReusableButtonDynamic>
+      <ReusableButtonDynamicNotStyled sx={{ bgcolor: "red" }} color={"primary"}>
+        Hello Not Styled
+      </ReusableButtonDynamicNotStyled>
+      <Stack spacing={2}>
+        <StaticStyled>StaticStyled</StaticStyled>
+        <OverridewWithThemeStyled>OverrideStyled</OverridewWithThemeStyled>
+        <OverrideStyledClasses> OverrideStyledClasses</OverrideStyledClasses>
+      </Stack>
     </>
   );
 }
