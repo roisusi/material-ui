@@ -49,6 +49,7 @@ const GeneralUsesSx = () => {
         backgroundColor: "secondary.light",
         width: 0.25, //25%
         bgcolor: theme.palette.error.light,
+        borderRadius: { xl: 2, lg: 1 },
       })}
     >
       My Button
