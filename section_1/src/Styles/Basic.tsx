@@ -12,6 +12,8 @@ const Basic = () => {
       {/*here is disabled prop is activated we get the class injected then the*/}
       {/*color black */}
       {/*will be activated*/}
+      {/*&.Mui-disabled is override classes*/}
+      {/*sx={{color:"red"}} called a static state*/}
       <Button
         disabled
         variant={"contained"}
@@ -20,7 +22,8 @@ const Basic = () => {
         classes manipulation
       </Button>
       {/*Child Class*/}
-      {/*we need to make a space & . if this is a chils similar to * >{}*/}
+      {/*we need to make a space & . if this is a child similar to * >{}*/}
+      {/*also we used ternary state for inline bgcolor that a dynamic */}
       <Button
         variant={"text"}
         onClick={() => {
@@ -30,7 +33,7 @@ const Basic = () => {
         Open ME
       </Button>
       <Menu
-        sx={{ "& .MuiMenu-paper": { bgcolor: "red" } }}
+        sx={{ "& .MuiMenu-paper": { bgcolor: open ?  "red" : "black" } }}
         open={open}
         onClose={() => setOpen(!open)}
       >

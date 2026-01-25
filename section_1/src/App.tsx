@@ -11,6 +11,7 @@ import {
   StaticStyled,
 } from "./Styles/WithStyledClass/StylesBaseComponents.tsx";
 import { Stack } from "@mui/material";
+import GlobalStylesWithTheme from "./Styles/GlobalStylesWithTheme.tsx";
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
         <StaticStyled>StaticStyled</StaticStyled>
         <OverridewWithThemeStyled>OverrideStyled</OverridewWithThemeStyled>
         <OverrideStyledClasses> OverrideStyledClasses</OverrideStyledClasses>
+      </Stack>
+
+      <Stack>
+        <GlobalStylesWithTheme />
       </Stack>
     </>
   );
