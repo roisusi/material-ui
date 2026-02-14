@@ -10,8 +10,9 @@ import {
   OverrideStyledClasses,
   StaticStyled,
 } from "./Styles/WithStyledClass/StylesBaseComponents.tsx";
-import { Stack } from "@mui/material";
+import { Container, Stack } from "@mui/material";
 import GlobalStylesWithTheme from "./Styles/GlobalStylesWithTheme.tsx";
+import Example1 from "./AutoComplete/Example1.tsx";
 
 function App() {
   return (
@@ -32,6 +33,12 @@ function App() {
       <Stack>
         <GlobalStylesWithTheme />
       </Stack>
+
+      <Container>
+        <Stack sx={{ mt: 5 }}>
+          <Example1 />
+        </Stack>
+      </Container>
     </>
   );
 }
