@@ -1,6 +1,13 @@
 import Autocomplete from "@mui/material/Autocomplete";
 import { TextField } from "@mui/material";
+import { useEffect, useState } from "react";
+
 // import Box from "@mui/material/Box";
+
+interface Options {
+  name: string;
+  year: string;
+}
 
 // const options = ["Apple", "Banana", "Orange", "Pineapple"];
 //Grouped
@@ -22,8 +29,40 @@ const options = [
 ];
 
 const Example1 = () => {
+  //adding values to control the element
+  const [value, setValue] = useState<Options | null>(null);
+
+  useEffect(() => {
+    console.log("value");
+    console.log(value);
+  }, [value]);
   return (
     <Autocomplete
+      freeSolo
+      isOptionEqualToValue={(option, value) => {
+        return value.name === option.name; //for mui purpose to check the equalization
+      }}
+      value={value}
+      onBlur={(event) => {
+        const text = (event.target as HTMLInputElement).value;
+        const selectedText =
+          value === null ? "" : `${value.year} - ${value.name}`; //check of the same value dont setValue it
+
+        if (text === selectedText) {
+          // כבר אותו ערך — לא עושים setValue
+          return;
+        } else {
+          setValue(value);
+          console.log(text);
+        }
+      }}
+      onChange={(event, value, reason, details) => {
+        setValue(value as Options);
+        console.log(event);
+        console.log(reason);
+        console.log(details?.option.name);
+        console.log(value!);
+      }}
       // disabled
       // multiple
       // limitTags={2} // will show 4 tags then the +number when not focus
@@ -35,9 +74,13 @@ const Example1 = () => {
       // groupBy={(option) => {
       //   return option.year; //Group by options of the data
       // }}
-      //if i want the getOptionLabel to be as the selection options too (in the paper) i need to remove
+      //if I want the getOptionLabel to be as the selection options too (in the paper) i need to remove
       //renderOption
-      getOptionLabel={(option) => `${option.year} - ${option.name}`}
+      getOptionLabel={(option) =>
+        typeof option === "string"
+          ? option
+          : `${(option as Options).year} - ${(option as Options).name}`
+      }
       // renderOption={(props, option) => {
       //   return (
       //     //Custom renders for options
