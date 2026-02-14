@@ -12,7 +12,7 @@ import {
 } from "./Styles/WithStyledClass/StylesBaseComponents.tsx";
 import { Container, Stack } from "@mui/material";
 import GlobalStylesWithTheme from "./Styles/GlobalStylesWithTheme.tsx";
-import Example1 from "./AutoComplete/Example1.tsx";
+import Functionality from "./AutoComplete/Functionality.tsx";
 
 function App() {
   return (
@@ -36,7 +36,7 @@ function App() {
 
       <Container>
         <Stack sx={{ mt: 5 }}>
-          <Example1 />
+          <Functionality />
         </Stack>
       </Container>
     </>

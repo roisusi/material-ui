@@ -28,7 +28,7 @@ const options = [
   { name: "Pineapple", year: "2023" },
 ];
 
-const Example1 = () => {
+const Functionality = () => {
   //adding values to control the element
   const [value, setValue] = useState<Options | null>(null);
 
@@ -104,4 +104,4 @@ const Example1 = () => {
   );
 };
 
-export default Example1;
+export default Functionality;
