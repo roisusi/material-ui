@@ -28,7 +28,7 @@ const options = [
   { name: "Pineapple", year: "2023" },
 ];
 
-const Functionality = () => {
+const AutoCompleteFunctionality = () => {
   //adding values to control the element
   const [value, setValue] = useState<Options | null>(null);
 
@@ -104,4 +104,4 @@ const Functionality = () => {
   );
 };
 
-export default Functionality;
+export default AutoCompleteFunctionality;
