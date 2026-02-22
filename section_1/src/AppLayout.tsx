@@ -14,6 +14,7 @@ import GlobalStylesWithTheme from "./Styles/GlobalStylesWithTheme.tsx";
 import AutoCompleteFunctionality from "./AutoComplete/AutoCompleteFunctionality.tsx";
 import ButtonFunctionality from "./Button/ButtonFunctionality.tsx";
 import ButtonStyled from "./Button/ButtonStyled.tsx";
+import TypographyFunctionality from "./Typography/TypographyFunctionality.tsx";
 
 const AppLayout = () => {
   return (
@@ -46,6 +47,13 @@ const AppLayout = () => {
           <Typography variant={"h1"}>Buttons</Typography>
           <ButtonFunctionality />
           <ButtonStyled />
+        </Stack>
+      </Container>
+
+      <Container>
+        <Stack sx={{ mt: 15 }}>
+          <Typography variant={"h1"}>Typography</Typography>
+          <TypographyFunctionality />
         </Stack>
       </Container>
     </>
