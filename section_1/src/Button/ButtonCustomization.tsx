@@ -7,7 +7,7 @@ import {
 } from "@mui/icons-material";
 import { useState } from "react";
 
-const ButtonStyled = () => {
+const ButtonCustomization = () => {
   const [disabled, setDisabled] = useState(false);
   return (
     <Stack spacing={2} direction="row" sx={{ justifyContent: "center" }}>
@@ -57,4 +57,4 @@ const ButtonStyled = () => {
   );
 };
 
-export default ButtonStyled;
+export default ButtonCustomization;

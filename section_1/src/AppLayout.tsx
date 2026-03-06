@@ -13,8 +13,37 @@ import { Container, Stack, Typography } from "@mui/material";
 import GlobalStylesWithTheme from "./Styles/GlobalStylesWithTheme.tsx";
 import AutoCompleteFunctionality from "./AutoComplete/AutoCompleteFunctionality.tsx";
 import ButtonFunctionality from "./Button/ButtonFunctionality.tsx";
-import ButtonStyled from "./Button/ButtonStyled.tsx";
+import ButtonCustomization from "./Button/ButtonCustomization.tsx";
 import TypographyFunctionality from "./Typography/TypographyFunctionality.tsx";
+import TypographyCustomization from "./Typography/TypographyCustomization.tsx";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import SvgIconCustomization from "./SvgIcon/SvgIconCustomization.tsx";
+
+const themeForTypo = createTheme({
+  typography: {
+    myCustomTypo: {
+      fontFamily: "Arial",
+      fontSize: "2rem",
+      color: "blue",
+    },
+    h6: {
+      fontSize: "1rem",
+      fontWeight: "bold",
+      fontFamily: "Roboto",
+      color: "white",
+    },
+  },
+  components: {
+    MuiTypography: {
+      defaultProps: {
+        variantMapping: {
+          h6: "h1", //inspect => h6 -> style h1 -> dom
+          myCustomTypo: "h2",
+        },
+      },
+    },
+  },
+});
 
 const AppLayout = () => {
   return (
@@ -46,7 +75,7 @@ const AppLayout = () => {
         <Stack spacing={3} sx={{ mt: 15 }}>
           <Typography variant={"h1"}>Buttons</Typography>
           <ButtonFunctionality />
-          <ButtonStyled />
+          <ButtonCustomization />
         </Stack>
       </Container>
 
@@ -54,6 +83,17 @@ const AppLayout = () => {
         <Stack sx={{ mt: 15 }}>
           <Typography variant={"h1"}>Typography</Typography>
           <TypographyFunctionality />
+          <ThemeProvider theme={themeForTypo}>
+            <Typography variant={"h3"}>Custom</Typography>
+            <TypographyCustomization />
+          </ThemeProvider>
+        </Stack>
+      </Container>
+
+      <Container>
+        <Stack sx={{ mt: 15 }}>
+          <Typography variant={"h1"}>Icons</Typography>
+          <SvgIconCustomization sx={{ color: "red" }} />
         </Stack>
       </Container>
     </>

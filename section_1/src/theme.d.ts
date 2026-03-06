@@ -5,7 +5,7 @@ declare module "@mui/material/styles" {
    * theme.typography.myCustomTypo
    */
   interface TypographyVariants {
-    myCustomTypo: React.CSSProperties;
+    myCustomTypo: CSSProperties;
   }
 
   /**
@@ -14,7 +14,7 @@ declare module "@mui/material/styles" {
    *   }
    */
   interface TypographyVariantsOptions {
-    myCustomTypo?: React.CSSProperties;
+    myCustomTypo?: CSSProperties;
   }
 }
 
