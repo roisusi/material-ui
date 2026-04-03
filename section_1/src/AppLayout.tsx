@@ -18,6 +18,8 @@ import TypographyFunctionality from "./Typography/TypographyFunctionality.tsx";
 import TypographyCustomization from "./Typography/TypographyCustomization.tsx";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import SvgIconCustomization from "./SvgIcon/SvgIconCustomization.tsx";
+import AlertFunctionality from "./Alert/AlertFunctionality.tsx";
+import AlertCustomization from "./Alert/AlertCustomization.tsx";
 
 const themeForTypo = createTheme({
   typography: {
@@ -94,6 +96,19 @@ const AppLayout = () => {
         <Stack sx={{ mt: 15 }}>
           <Typography variant={"h1"}>Icons</Typography>
           <SvgIconCustomization sx={{ color: "red" }} />
+        </Stack>
+      </Container>
+
+      <Container>
+        <Stack
+          spacing={10}
+          sx={{
+            mt: 15,
+          }}
+        >
+          <Typography variant={"h1"}>Alerts</Typography>
+          <AlertFunctionality />
+          <AlertCustomization />
         </Stack>
       </Container>
     </>
